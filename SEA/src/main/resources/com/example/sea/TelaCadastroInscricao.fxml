@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="181.0" prefWidth="395.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sea.gui.TelaCadastroInscricaoController">
+     <Label alignment="TOP_LEFT" prefHeight="43.0" prefWidth="423.0" styleClass="titulo" text="Cadastrar Inscrição" textAlignment="RIGHT">
+      <VBox.margin>
+         <Insets left="10.0" />
+      </VBox.margin>
+   </Label>
+
+    <VBox maxWidth="600" prefHeight="152.0" prefWidth="395.0" spacing="20" styleClass="card">
+
+        <HBox prefHeight="68.0" prefWidth="395.0" spacing="20">
+            <VBox prefHeight="88.0" prefWidth="170.0" spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Participante">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin></Label>
+            <ChoiceBox fx:id="choiceParticipante" prefWidth="150.0" styleClass="btn-card-yellow">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            </VBox>
+            <VBox prefHeight="88.0" prefWidth="152.0" spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Palestra" />
+            <ChoiceBox fx:id="choicePalestra" prefWidth="150.0" styleClass="btn-card-yellow" />
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="395.0" spacing="15" style="-fx-padding: 20 0 0 0;">
+            <Button onAction="#cancelar" prefWidth="120" styleClass="btn-perigo" text="CANCELAR" />
+            <Button onAction="#salvar" prefWidth="150" styleClass="btn-acao" text="SALVAR" />
+         <VBox.margin>
+            <Insets right="10.0" />
+         </VBox.margin>
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="20" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sea.gui.TelaCadastroParticipanteController">
+
+    <VBox maxWidth="350" spacing="15" styleClass="card">
+        <Label styleClass="titulo" text="Novo Cadastro" />
+
+        <VBox spacing="5">
+            <Label text="Nome Completo" />
+            <TextField fx:id="txtNome" promptText="Digite seu nome" />
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="E-mail" />
+            <TextField fx:id="txtEmail" promptText="exemplo@email.com" />
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Instituição" />
+            <TextField fx:id="txtInstituicao" promptText="Ex: UFPE, Empresa X" />
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="CPF" />
+            <TextField fx:id="txtCpf" promptText="000.000.000-00" />
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Senha" />
+            <PasswordField fx:id="txtSenha" promptText="Crie uma senha segura" />
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 20 0 0 0;">
+            <Button onAction="#cancelar" styleClass="btn-perigo" text="CANCELAR" />
+            <Button onAction="#salvar" styleClass="btn-acao" text="CADASTRAR" />
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="377.0" prefWidth="318.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sea.gui.TelaCadastroEventoController">
+
+    <VBox maxWidth="600" prefHeight="344.0" prefWidth="318.0" spacing="20" styleClass="card">
+        <Label styleClass="titulo" text="Cadastrar Evento">
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin></Label>
+
+        <VBox spacing="5">
+            <Label text="Nome Completo">
+            <VBox.margin>
+               <Insets left="10.0" />
+            </VBox.margin></Label>
+            <TextField fx:id="txtNome" prefHeight="40">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </VBox.margin></TextField>
+        </VBox>
+
+        <HBox spacing="20">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Data Inicio">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin></Label>
+            <DatePicker fx:id="dpDataInicio" styleClass="btn-card-yellow">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </DatePicker>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Data Fim" />
+            <DatePicker fx:id="dpDataFim" styleClass="btn-card-yellow">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </DatePicker>
+            </VBox>
+        </HBox>
+
+        <VBox spacing="5">
+            <Label text="Descrição">
+            <VBox.margin>
+               <Insets left="10.0" />
+            </VBox.margin></Label>
+         <TextArea fx:id="txtDescricao" prefHeight="261.0" prefWidth="298.0">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+         </TextArea>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="318.0" spacing="15" style="-fx-padding: 20 0 0 0;">
+            <Button onAction="#cancelar" prefWidth="120" styleClass="btn-perigo" text="CANCELAR" />
+            <Button onAction="#salvar" prefWidth="150" styleClass="btn-acao" text="SALVAR">
+            <HBox.margin>
+               <Insets right="10.0" />
+            </HBox.margin></Button>
+        </HBox>
+    </VBox>
+</VBox>

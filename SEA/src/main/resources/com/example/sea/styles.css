@@ -1,0 +1,244 @@
+/* --- VARIÁVEIS DE CORES (Baseado nas imagens enviadas) --- */
+.root {
+    /* Fundo Geral: Azul Marinho muito escuro (quase preto) */
+    -fx-bg-color:       #0F111A;
+
+    /* Fundo dos Cartões: Um tom acima, levemente azulado */
+    -fx-card-bg:        #1E2130;
+
+    /* Cor Principal: Roxo Vibrante (baseado na img 1 e 3) */
+    -fx-primary:        #8B5CF6;
+
+    /* Cor Secundária/Gradiente: Rosa Choque */
+    -fx-secondary:      #D946EF;
+
+    /* Texto: Branco puro para contraste */
+    -fx-text-main:      #FFFFFF;
+
+    /* Texto Secundário: Cinza claro */
+    -fx-text-muted:     #94A3B8;
+
+    /* Cor de Perigo: Vermelho suave */
+    -fx-danger:         #EF4444;
+
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: -fx-bg-color;
+}
+
+/* --- TÍTULOS E TEXTOS --- */
+.label {
+    -fx-text-fill: -fx-text-main;
+}
+
+.titulo {
+    /* Gradiente no texto (simulado) ou cor sólida vibrante */
+    -fx-text-fill: -fx-text-main;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(139, 92, 246, 0.4), 10, 0.5, 0, 0); /* Glow Roxo */
+}
+
+/* Texto pequeno dentro dos cards */
+.card-text {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 12px;
+}
+.card-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* --- CARTÕES (Cards) --- */
+.card {
+    -fx-background-color: -fx-card-bg;
+    -fx-background-radius: 15; /* Bordas mais arredondadas como nas imagens */
+    -fx-border-radius: 15;
+
+    /* Sombra suave para dar profundidade */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 15, 0, 0, 5);
+    -fx-padding: 20;
+
+    /* Borda sutil para destacar do fundo */
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-width: 1;
+}
+
+/* --- BOTÃO DE AÇÃO (Gradiente Roxo/Rosa) --- */
+.btn-acao {
+    /* Gradiente linear inspirado na imagem 1 */
+    -fx-background-color: linear-gradient(to right, -fx-primary, -fx-secondary);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 30; /* Formato de Pílula */
+    -fx-cursor: hand;
+    -fx-padding: 8 20;
+}
+
+.btn-acao:hover {
+    /* Efeito de brilho ao passar o mouse */
+    -fx-effect: dropshadow(gaussian, rgba(217, 70, 239, 0.6), 15, 0.3, 0, 0);
+    -fx-translate-y: -1; /* Leve subida */
+}
+
+.btn-acao:pressed {
+    -fx-background-color: -fx-secondary;
+}
+
+/* --- BOTÃO DE PERIGO (Cancelar/Excluir) --- */
+.btn-perigo {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-danger;
+    -fx-border-color: -fx-danger;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-padding: 7 20;
+}
+
+.btn-perigo:hover {
+    -fx-background-color: -fx-danger;
+    -fx-text-fill: white;
+}
+
+/* --- BOTÃO AMARELO (Extra para destaque, se precisar) --- */
+.btn-card-yellow {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FACC15;
+    -fx-border-color: #FACC15;
+    -fx-border-radius: 30;
+    -fx-border-width: 1;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+}
+.btn-card-yellow:hover {
+    -fx-background-color: rgba(250, 204, 21, 0.1);
+}
+
+
+/* --- CAMPOS DE TEXTO (Inputs) --- */
+.text-field, .password-field, .text-area {
+    -fx-background-color: #151720; /* Mais escuro que o card */
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: derive(-fx-text-muted, -30%);
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #35394b;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: -fx-primary;
+    -fx-effect: dropshadow(gaussian, rgba(139, 92, 246, 0.2), 5, 0, 0, 0);
+}
+
+/* --- TABELA (TableView) --- */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Cabeçalho da Tabela */
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #35394b transparent;
+    -fx-padding: 10 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Linhas da Tabela */
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.05) transparent;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 10;
+}
+
+/* Linha Selecionada */
+.table-row-cell:selected {
+    -fx-background-color: rgba(139, 92, 246, 0.15); /* Roxo transparente */
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: -fx-primary;
+}
+
+/* --- BARRA DE ROLAGEM (ScrollPane) --- */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #35394b;
+    -fx-background-radius: 5;
+}
+
+/* --- DATE PICKER (Calendário) --- */
+.date-picker .text-field {
+    -fx-background-color: #151720;
+    -fx-text-fill: white;
+}
+.date-picker .button {
+    -fx-background-color: transparent;
+}
+.date-picker .arrow {
+    -fx-background-color: -fx-text-muted;
+}
+
+/* Estilo específico para Áreas de Texto (Descrição) */
+.text-area {
+    -fx-text-fill: white;        /* Cor da fonte: Preto */
+    -fx-prompt-text-fill: #555;  /* Cor do texto de ajuda (prompt): Cinza escuro */
+    -fx-background-color: #151720; /* Fundo: Branco (para dar leitura) */
+}
+
+/* Ajuste para o "conteúdo" interno do TextArea (necessário em alguns casos) */
+.text-area .content {
+    -fx-background-color: #151720;
+    -fx-text-fill: white;
+}
+
+/* --- CORREÇÃO DO CHOICEBOX (Lista Suspensa) --- */
+
+/* Muda o fundo da lista para cinza escuro (igual aos cards) */
+.choice-box .context-menu {
+    -fx-background-color: #1E2130;
+    -fx-border-color: #35394b;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+
+/* Garante que o texto das opções seja branco */
+.choice-box .menu-item .label {
+    -fx-text-fill: white;
+}
+
+/* Quando passar o mouse por cima (Hover/Foco), fica Roxo */
+.choice-box .menu-item:focused {
+    -fx-background-color: #8B5CF6;
+}
+.choice-box .menu-item:focused .label {
+    -fx-text-fill: white;
+}
