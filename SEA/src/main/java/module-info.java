@@ -8,4 +8,6 @@ module com.example.sea {
 
     opens com.example.sea to javafx.fxml;
     exports com.example.sea;
+    exports com.example.sea.model;
+    opens com.example.sea.model to javafx.fxml;
 }
