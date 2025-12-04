@@ -17,7 +17,7 @@ public class TelaCadastroInscricaoController {
     @FXML
     private ChoiceBox<Palestra> choicePalestra;
 
-    // Variável para controlar se estamos editando
+    
     private Inscricao inscricaoEmEdicao;
 
     @FXML
