@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="527f0dfd-8f82-475c-8319-6bd401cf7685" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoCertificados.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoEventos.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoInscricoes.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoPalestrantes.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoPalestras.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoParticipantes.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoSalas.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepoWorkshops.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/business/ControladorCertificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/business/ControladorCertificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/business/ControladorInscricao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/business/ControladorInscricao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/business/IControladorCertificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/business/IControladorCertificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaCadastroInscricaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaCadastroInscricaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaCadastroWorkshopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaCadastroWorkshopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaGerenciarPalestrasWorkshopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaGerenciarPalestrasWorkshopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarInscricoesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarInscricoesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarPresencasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarPresencasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarWorkshopsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaListarWorkshopsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaPresencasParticipantesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/TelaPresencasParticipantesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewCertificadosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewCertificadosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewEventosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewEventosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewInscricoesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/gui/ViewInscricoesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/model/Inscricao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/model/Inscricao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/model/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/model/Workshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sea/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sea/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
