@@ -12,7 +12,6 @@ public class SistemaSGA {
     private IControladorWorkshop controladorWorkshop;
     private IControladorInscricao controladorInscricao;
     private IControladorCertificado controladorCertificado;
-
     private IControladorNotificacao controladorNotificacao;
 
     private SistemaSGA() {
@@ -24,7 +23,6 @@ public class SistemaSGA {
         this.controladorWorkshop = new ControladorWorkshop();
         this.controladorInscricao = new ControladorInscricao();
         this.controladorCertificado = new ControladorCertificado();
-        
         this.controladorNotificacao = new ControladorNotificacao();
     }
 
