@@ -81,6 +81,20 @@ public class ControladorPalestra implements IControladorPalestra {
 
         validarConflitos(novaPalestra);
         this.repositorioPalestra.salvar(novaPalestra);
+        
+        try {
+            new Thread(() -> {
+                ServicoEmail.enviarEmailConfirmacaoPalestrante(
+                        palestrante.getEmail(),
+                        palestrante.getNome(),
+                        titulo,
+                        dataHoraInicio
+                );
+            }).start();
+        } catch (Exception e) {
+            System.err.println("Falha ao enviar e-mail para o palestrante: " + e.getMessage());
+        }
+
     }
 
     @Override
