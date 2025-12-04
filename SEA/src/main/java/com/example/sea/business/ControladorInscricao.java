@@ -6,6 +6,7 @@ import com.example.sea.exceptions.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.sea.util.ServicoEmail;
 
 public class ControladorInscricao implements IControladorInscricao {
 
