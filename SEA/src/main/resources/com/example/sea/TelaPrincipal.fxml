@@ -16,7 +16,7 @@
             <padding><Insets bottom="30" left="20" right="20" top="30" /></padding>
          <ImageView fitHeight="224.0" fitWidth="291.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@images/logo_eventos_academicos_brilhoso.png" />
+               <Image url="@logo_eventos_academicos_brilhoso.png" />
             </image>
          </ImageView>
 
