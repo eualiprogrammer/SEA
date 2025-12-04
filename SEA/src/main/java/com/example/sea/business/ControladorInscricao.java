@@ -77,6 +77,20 @@ public class ControladorInscricao implements IControladorInscricao {
         } catch (Exception e) {
             System.err.println("Erro ao enviar notificação: " + e.getMessage());
         }
+
+        try {
+            new Thread(() -> {
+                String nomeAtividade = atividade.getTitulo();
+
+                ServicoEmail.enviarEmailConfirmacao(
+                        participante.getEmail(),
+                        participante.getNome(),
+                        nomeAtividade
+                );
+            }).start();
+        } catch (Exception e) {
+            System.err.println("Falha ao tentar enviar e-mail: " + e.getMessage());
+        }
     }
 
     @Override
