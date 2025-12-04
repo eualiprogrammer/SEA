@@ -1,11 +1,14 @@
 package com.example.sea.gui;
 
-import com.example.sea.model.*;
+import com.example.sea.model.Inscricao;
+import com.example.sea.model.Sala;
+import com.example.sea.model.Evento;
+import com.example.sea.model.Palestra;
+import com.example.sea.model.Palestrante;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 
