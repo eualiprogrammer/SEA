@@ -3,8 +3,8 @@ package com.example.sea.business;
 import com.example.sea.data.*;
 import com.example.sea.model.*;
 import com.example.sea.exceptions.*;
-import java.util.ArrayList;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorInscricao implements IControladorInscricao {
@@ -25,7 +25,6 @@ public class ControladorInscricao implements IControladorInscricao {
         for (Inscricao inscricao : inscricoesExistentes) {
             if (inscricao.getAtividade() instanceof Palestra) {
                 Palestra palestraExistente = (Palestra) inscricao.getAtividade();
-
                 LocalDateTime inicioExistente = palestraExistente.getDataHoraInicio();
                 long minutosExistente = (long) (palestraExistente.getDuracaoHoras() * 60);
                 LocalDateTime fimExistente = inicioExistente.plusMinutes(minutosExistente);
@@ -44,26 +43,20 @@ public class ControladorInscricao implements IControladorInscricao {
 
         if (atividade instanceof Palestra) {
             Palestra palestra = (Palestra) atividade;
-
             int numeroInscritos = this.repositorioInscricao.listarPorPalestra(palestra).size();
             int capacidadeSala = palestra.getSala().getCapacidade();
 
             if (numeroInscritos >= capacidadeSala) {
                 throw new LotacaoExcedidaException(palestra.getTitulo());
             }
-
             this.validarConflitoHorario(participante, palestra);
         }
 
+
         if (atividade instanceof Workshop) {
             Workshop workshop = (Workshop) atividade;
-
-            if (workshop.getPalestrasDoWorkshop().isEmpty()) {
-            }
-
             for (Palestra palestraDoPacote : workshop.getPalestrasDoWorkshop()) {
                 try {
-
                     this.inscrever(participante, palestraDoPacote);
                 } catch (InscricaoJaExisteException e) {
                     System.out.println("Já inscrito na palestra: " + palestraDoPacote.getTitulo());
@@ -73,11 +66,22 @@ public class ControladorInscricao implements IControladorInscricao {
 
         Inscricao novaInscricao = new Inscricao(participante, atividade);
         this.repositorioInscricao.salvar(novaInscricao);
+
+        try {
+            String titulo = "Inscrição Confirmada";
+            String msg = "Sua vaga na atividade '" + atividade.getTitulo() + "' está garantida.";
+
+            SistemaSGA.getInstance().getControladorNotificacao()
+                    .enviarNotificacao(participante, titulo, msg);
+
+        } catch (Exception e) {
+            System.err.println("Erro ao enviar notificação: " + e.getMessage());
+        }
     }
 
     @Override
-    public void inscrever(Participante participante, Palestra palestra) throws Exception {
-        this.inscrever(participante, (Atividade) palestra);
+    public void inscrever(Participante p, Palestra pl) throws Exception {
+        this.inscrever(p, (Atividade) pl);
     }
 
     @Override
@@ -95,11 +99,18 @@ public class ControladorInscricao implements IControladorInscricao {
 
         try {
             Certificado novoCertificado = new Certificado(inscricao);
-
             SistemaSGA.getInstance().getControladorCertificado().cadastrar(novoCertificado);
 
             inscricao.setCertificado(novoCertificado);
             this.repositorioInscricao.atualizar(inscricao);
+
+            SistemaSGA.getInstance().getControladorNotificacao().enviarNotificacao(
+                    inscricao.getParticipante(),
+                    "🎓 Certificado Disponível",
+                    "Sua presença em '" + inscricao.getAtividade().getTitulo() + "' foi confirmada! O certificado já está disponível."
+            );
+
+            System.out.println("Presença confirmada e Certificado gerado!");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,36 +130,10 @@ public class ControladorInscricao implements IControladorInscricao {
         return novoCertificado;
     }
 
-    @Override
-    public List<Inscricao> listarPorParticipante(Participante participante) {
-        if (participante == null) return new ArrayList<>();
-        return this.repositorioInscricao.listarPorParticipante(participante);
-    }
-
-    @Override
-    public List<Inscricao> listarPorPalestra(Palestra palestra) {
-        if (palestra == null) return new ArrayList<>();
-        return this.repositorioInscricao.listarPorPalestra(palestra);
-    }
-
-    @Override
-    public List<Inscricao> listarTodos() {
-        return this.repositorioInscricao.listarTodas();
-    }
-
-    @Override
-    public void atualizar(Inscricao inscricao) throws Exception {
-        if (inscricao == null) throw new IllegalArgumentException("Inscrição inválida");
-        this.repositorioInscricao.atualizar(inscricao);
-    }
-
-    @Override
-    public void cadastrar(Inscricao inscricao) throws Exception {
-        this.repositorioInscricao.salvar(inscricao);
-    }
-
-    @Override
-    public List<Inscricao> listarPorAtividade(Atividade atividade) {
-        return this.repositorioInscricao.listarPorAtividade(atividade);
-    }
+    @Override public List<Inscricao> listarPorParticipante(Participante p) { return this.repositorioInscricao.listarPorParticipante(p); }
+    @Override public List<Inscricao> listarPorPalestra(Palestra p) { return this.repositorioInscricao.listarPorPalestra(p); }
+    @Override public List<Inscricao> listarPorAtividade(Atividade a) { return this.repositorioInscricao.listarPorAtividade(a); }
+    @Override public List<Inscricao> listarTodos() { return this.repositorioInscricao.listarTodas(); }
+    @Override public void atualizar(Inscricao i) throws Exception { this.repositorioInscricao.atualizar(i); }
+    @Override public void cadastrar(Inscricao i) throws Exception { this.repositorioInscricao.salvar(i); }
 }
