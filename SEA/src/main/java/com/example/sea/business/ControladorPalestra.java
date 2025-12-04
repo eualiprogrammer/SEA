@@ -8,6 +8,7 @@ import com.example.sea.model.Inscricao;
 import com.example.sea.model.Palestra;
 import com.example.sea.model.Palestrante;
 import com.example.sea.model.Sala;
+import com.example.sea.util.ServicoEmail;
 
 import java.time.LocalDateTime;
 import java.util.List;
