@@ -6,8 +6,15 @@ module com.example.sea {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
 
+    requires kernel;
+    requires io;
+    requires layout;
+    requires org.slf4j;
+
+    // Permissões de Acesso
+    opens com.example.sea.model to javafx.base;
+    opens com.example.sea.gui to javafx.fxml;
     opens com.example.sea to javafx.fxml;
+
     exports com.example.sea;
-    exports com.example.sea.model;
-    opens com.example.sea.model to javafx.fxml;
 }
