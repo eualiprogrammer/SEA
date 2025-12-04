@@ -11,7 +11,8 @@ module com.example.sea {
     requires layout;
     requires org.slf4j;
 
-    // Permissões de Acesso
+    requires java.mail;
+    
     opens com.example.sea.model to javafx.base;
     opens com.example.sea.gui to javafx.fxml;
     opens com.example.sea to javafx.fxml;
