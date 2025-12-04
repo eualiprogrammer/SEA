@@ -16,6 +16,7 @@
             <Label styleClass="titulo" text="Eventos Disponíveis" />
 
             <Region HBox.hgrow="ALWAYS" />
+         <Button onAction="#verNotificacoes" styleClass="btn-acao" text="Notificações" />
              <Button onAction="#verWorkshops" styleClass="btn-acao" text="Workshops" />
 
             <Button onAction="#verMinhasInscricoes" styleClass="btn-acao" text="Minhas Inscrições" />

@@ -106,5 +106,9 @@ public class ViewEventosController {
         ScreenManager.getInstance().carregarTela("view_workshops.fxml", "Workshops Disponíveis");
     }
 
+    @FXML
+    private void verNotificacoes() {
+        ScreenManager.getInstance().carregarTela("view_notificacoes.fxml", "Minhas Notificações");
+    }
 
 }
